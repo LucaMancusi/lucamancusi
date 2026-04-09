@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const projects = await getCollection('projects');
+---
+
+<Layout>
+  <h1 class="text-3xl font-bold">Portfolio</h1>
+
+  <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+    {projects.map((p: typeof projects[number]) => (
+      <article class="rounded-lg border p-4">
+        <img src={p.data.image} alt={p.data.title} class="mb-2 rounded" />
+        <h2 class="text-xl font-semibold">{p.data.title}</h2>
+        <p>{p.data.description}</p>
+        <a href={p.data.link} class="text-blue-500">Visita</a>
+      </article>
+    ))}
+  </div>
+</Layout>

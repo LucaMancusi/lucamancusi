@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: lucamancusi/lucamancusi
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "projects"
+    label: "Progetti"
+    folder: "src/content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Descrizione", name: "description", widget: "text" }
+      - { label: "Tecnologie", name: "tech", widget: "list" }
+      - { label: "Immagine", name: "image", widget: "image" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown", required: false }
