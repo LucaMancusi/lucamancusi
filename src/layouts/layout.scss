@@ -1,0 +1,15 @@
+
+body {
+    @apply flex flex-col;
+    min-height: 100svh;
+
+
+    >main {
+        flex: 1 0 auto;
+        display: grid;
+    }
+
+    .wrapper {
+        @apply grid max-w-screen-xl justify-items-center content-start justify-self-center w-full px-4 md:px-8;
+    }
+}
